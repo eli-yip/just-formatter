@@ -5,6 +5,7 @@ edition = "2024"
 description = "Format justfile from stdin to stdout."
 license = "MIT"
 repository = "https://github.com/eli-yip/just-formatter"
+readme = "README.md"
 
 [dependencies]
 tempfile = "3.19.1"
