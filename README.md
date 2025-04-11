@@ -30,3 +30,14 @@ name = "just"
 auto-format = true
 formatter = { command = "just-formatter" }
 ```
+
+### Skip `just` check to accelarate speed
+
+Use `--skip-check`/`-s` flag. An example helix config:
+
+```toml
+[[language]]
+name = "just"
+auto-format = true
+formatter = { command = "just-formatter", args = ["--skip-check"] }
+```

@@ -1,9 +1,13 @@
+use std::env;
 use std::io::{self, Read, Write};
 use std::process::{Command, Stdio};
 use tempfile::NamedTempFile;
 
 fn main() -> io::Result<()> {
-    if !is_just_available() {
+    let args: Vec<String> = env::args().collect();
+    let skip_check = args.iter().any(|arg| arg == "--skip-check" || arg == "-s");
+
+    if !skip_check && !is_just_available() {
         eprintln!("Error: 'just' command not found. Please install just first.");
         std::process::exit(1);
     }
